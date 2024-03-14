@@ -3,7 +3,7 @@ guid: 9df4cc3b579ae1747bcd7896fda18cbf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -86,6 +90,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -98,6 +103,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -110,18 +116,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 50
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -134,6 +142,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -591,30 +600,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_14: 1262670000
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_6: 1636059040
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_7: -1857392959
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_16: -1799780686
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_3: -1285317813
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_2: 1458787519
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_17: -226218622
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_10: -1918215701
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_13: -821938059
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_9: -48324524
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_11: 769005221
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_15: -1877962124
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_20: 2083411042
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_4: -1326243522
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_5: -1796810692
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_8: 1033681320
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_19: -376118975
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_18: 1349986899
-      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_12: -897488022
       imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_0: -1339599912
       imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_1: -1079161469
-  spritePackingTag: 
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_10: -1918215701
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_11: 769005221
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_12: -897488022
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_13: -821938059
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_14: 1262670000
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_15: -1877962124
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_16: -1799780686
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_17: -226218622
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_18: 1349986899
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_19: -376118975
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_2: 1458787519
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_20: 2083411042
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_3: -1285317813
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_4: -1326243522
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_5: -1796810692
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_6: 1636059040
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_7: -1857392959
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_8: 1033681320
+      imgonline-com-ua-Transparent-backgr-b7ojdCfacgwUD_9: -48324524
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

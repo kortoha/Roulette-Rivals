@@ -4,74 +4,74 @@ using UnityEngine;
 
 public class WheelItem : MonoBehaviour
 {
-    [SerializeField] private int _carryingChipCont;
-    [SerializeField] private TextMeshProUGUI _carryingChipCountText;
-    [SerializeField] private Transform _wheelParentTransform;
+    [SerializeField] private int _cChC;
+    [SerializeField] private TextMeshProUGUI _cCCT;
+    [SerializeField] private Transform _wPT;
 
-    [SerializeField] private Transform _blueChipFX;
-    [SerializeField] private Transform _pinkChipFX;
-    [SerializeField] private Transform _redChipFX;
+    [SerializeField] private Transform _bCFX;
+    [SerializeField] private Transform _pCFX;
+    [SerializeField] private Transform _rCFX;
 
-    private bool _isFxOnce = false;
+    private bool _iFO = false;
 
-    public int CarryingChipCount
+    public int CCC
     {
-        get { return _carryingChipCont; }
+        get { return _cChC; }
         set
         {
-            _carryingChipCont = value;
-            _carryingChipCountText.text = _carryingChipCont.ToString();
+            _cChC = value;
+            _cCCT.text = _cChC.ToString();
         }
     }
 
-    public enum ChipTipe
+    public enum CT
     {
-        Blue,
-        Red,
-        Pink
+        B,
+        R,
+        P
     }
 
-    public ChipTipe chipTipe;
+    public CT cT;
 
     private void Start()
     {
-        _carryingChipCountText.text = _carryingChipCont.ToString();
+        _cCCT.text = _cChC.ToString();
     }
 
-    public void WinChips()
+    public void WC()
     {
-        switch (chipTipe)
+        switch (cT)
         {
-            case ChipTipe.Blue:
-                MoneyManager.Instance.TakeBlueChips(_carryingChipCont);
-                if (!_isFxOnce)
+            case CT.B:
+                MoneyManager.Instance.TBC(_cChC);
+                if (!_iFO)
                 {
                     SFXManager.Instance.PlaySound(SFXManager.Instance.blueChipWin);
-                    Transform bfx = Instantiate(_blueChipFX, Vector2.zero, Quaternion.identity);
-                    bfx.SetParent(_wheelParentTransform);
-                    _isFxOnce = true;
+                    Transform bfx = Instantiate(_bCFX, Vector2.zero, Quaternion.identity);
+                    bfx.SetParent(_wPT);
+                    _iFO = true;
                     StartCoroutine(DFX(bfx));
                 }
                 break;
-            case ChipTipe.Red:
-                MoneyManager.Instance.TakeRedChips(_carryingChipCont);
-                if (!_isFxOnce)
+            case CT.R:
+                MoneyManager.Instance.TRC(_cChC);
+                if (!_iFO)
                 {
                     SFXManager.Instance.PlaySound(SFXManager.Instance._inkChipWin);
-                    Transform pfx = Instantiate(_redChipFX, Vector2.zero, Quaternion.identity);
-                    pfx.SetParent(_wheelParentTransform);
-                    _isFxOnce = true;
+                    Transform pfx = Instantiate(_rCFX, Vector2.zero, Quaternion.identity);
+                    pfx.SetParent(_wPT);
+                    _iFO = true;
                     StartCoroutine(DFX(pfx));
                 }
                 break;
-            case ChipTipe.Pink:
-                MoneyManager.Instance.TakePinkChips(_carryingChipCont);
-                if (!_isFxOnce)
+            case CT.P:
+                MoneyManager.Instance.TPC(_cChC);
+                if (!_iFO)
                 {
                     SFXManager.Instance.PlaySound(SFXManager.Instance.returnChip);
-                    Transform rfx = Instantiate(_pinkChipFX, Vector2.zero, Quaternion.identity);
-                    rfx.SetParent(_wheelParentTransform);
-                    _isFxOnce = true;
+                    Transform rfx = Instantiate(_pCFX, Vector2.zero, Quaternion.identity);
+                    rfx.SetParent(_wPT);
+                    _iFO = true;
                     StartCoroutine(DFX(rfx));
                 }
                 break;
@@ -83,7 +83,7 @@ public class WheelItem : MonoBehaviour
     private IEnumerator DFX(Transform fx)
     {
         yield return new WaitForSeconds(1.25f);
-        _isFxOnce = false;
+        _iFO = false;
         Destroy(fx.gameObject);
     }
 }

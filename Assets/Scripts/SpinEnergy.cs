@@ -1,38 +1,82 @@
+using System;
 using TMPro;
 using UnityEngine;
 
 public class SpinEnergy : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _goldChipCountText;
-    [SerializeField] private int _goldChipCount;
+    public static SpinEnergy Instance { get; private set; }
 
-    private int _maxGoldChipCount;
+    [NonSerialized] public bool iMO = false;
+
+    [SerializeField] private TextMeshProUGUI _gCCT;
+    [SerializeField] private int _gCC;
+    [SerializeField] GameObject _mG;
+    [SerializeField] GameObject _fWP;
+    [SerializeField] GameObject _tP;
+    [SerializeField] GameObject _tTB;
+
+    private int _mGCC;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
-        _maxGoldChipCount = _goldChipCount;
+        _mGCC = _gCC;
     }
 
     private void Update()
     {
-        _goldChipCountText.text = _goldChipCount.ToString() + "/" + _maxGoldChipCount.ToString();
+        _gCCT.text = _gCC.ToString() + "/" + _mGCC.ToString();
+
+        if(_gCC == 0 && !iMO)
+        {
+            iMO = true;
+            Invoke("IOMG", 1.5f);
+        }
     }
      
-    public void UseEnergyForGoldChip()
+    public void UEFGC()
     {
-        _goldChipCount--;
+        _gCC--;
     }
 
-    public int GetGoldChipCount()
+    public int GGCC()
     {
-        return _goldChipCount;
+        return _gCC;
     }
 
-    public void BuyGoldChip()
+    public void BGC()
     {
-        if(_goldChipCount < _maxGoldChipCount)
+        if(_gCC < _mGCC)
         {
-            _goldChipCount++;
+            _gCC++;
         }
+    }
+
+    public void WGC(int a)
+    {
+        _gCC += a;
+        if(_gCC > _mGCC)
+        {
+            _gCC = _mGCC;
+        }
+    }
+
+    void OMG()
+    {
+        _mG.SetActive(true);
+        MiniGameInput.Instance.iW = false;
+        _fWP.SetActive(false);
+        _tP.SetActive(false);
+        _tTB.SetActive(false);
+    }
+
+    void IOMG()
+    {
+        Fader.Instance.PFA();
+        Invoke("OMG", 0.51f);
     }
 }

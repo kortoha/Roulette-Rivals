@@ -25,6 +25,7 @@ public class GameUI : MonoBehaviour
     private void Start()
     {
         _iSOn = PlayerPrefs.GetInt("IsSoundOn", 0) == 0;
+        AudioListener.pause = _iSOn;
 
         USBS();
 
@@ -93,7 +94,7 @@ public class GameUI : MonoBehaviour
     {
         if (_iWPA)
         {
-            MoneyManager.Instance.SavePREFS();
+            MoneyManager.Instance.SPREFS();
         }
         SceneManager.LoadScene(_sID);
         Time.timeScale = 1;
@@ -103,7 +104,7 @@ public class GameUI : MonoBehaviour
     {
         if (_iWPA)
         {
-            MoneyManager.Instance.SavePREFS();
+            MoneyManager.Instance.SPREFS();
         }
         SceneManager.LoadScene(1);
         Time.timeScale = 1;

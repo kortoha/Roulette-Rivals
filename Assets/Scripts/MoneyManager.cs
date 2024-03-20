@@ -4,10 +4,10 @@ public class MoneyManager : MonoBehaviour
 {
     public static MoneyManager Instance { get; private set; }
 
-    [SerializeField] private int _blueChipCount;
-    [SerializeField] private int _pinkChipCount;
-    [SerializeField] private int _redChipCount;
-    [SerializeField] private int _coinCount = 300;
+    [SerializeField] private int _bCC;
+    [SerializeField] private int _pCC;
+    [SerializeField] private int _rCC;
+    [SerializeField] private int _cC = 300;
 
     private void Awake()
     {
@@ -24,90 +24,90 @@ public class MoneyManager : MonoBehaviour
 
     private void OnEnable()
     {
-        LoadPREFS();
+        LPREFS();
     }
 
-    public void TakeBlueChips(int chipCount)
+    public void TBC(int cC)
     {
-        _blueChipCount += chipCount;
+        _bCC += cC;
     }
-    public void TakeRedChips(int chipCount)
+    public void TRC(int cC)
     {
-        _redChipCount += chipCount;
+        _rCC += cC;
     }
-    public void TakePinkChips(int chipCount)
+    public void TPC(int cC)
     {
-        _pinkChipCount += chipCount;
-    }
-
-    public int GetPinkChips()
-    {
-        return _pinkChipCount;
-    }
-    public int GetRedChips()
-    {
-        return _redChipCount;
-    }
-    public int GetBlueChips()
-    {
-        return _blueChipCount;
+        _pCC += cC;
     }
 
-    public int GetCoins()
+    public int GPC()
     {
-        return _coinCount;
+        return _pCC;
+    }
+    public int GRC()
+    {
+        return _rCC;
+    }
+    public int GBC()
+    {
+        return _bCC;
     }
 
-    public void BuyForBlueChips(int price)
+    public int GC()
     {
-        _blueChipCount -= price;
-    }
-    public void BuyForRedChips(int price)
-    {
-        _redChipCount -= price;
-    }
-    public void BuyForPinkChips(int price)
-    {
-        _pinkChipCount -= price;
+        return _cC;
     }
 
-    public void WinBlueChips(int amount)
+    public void BFBC(int p)
     {
-        _blueChipCount += amount;
+        _bCC -= p;
     }
-    public void WinRedChips(int price)
+    public void BFRC(int p)
     {
-        _redChipCount += price;
+        _rCC -= p;
     }
-    public void WinPinkChips(int amount)
+    public void BFPC(int p)
     {
-        _pinkChipCount += amount;
-    }
-
-    public void WinMoney(int amount)
-    {
-        _coinCount += amount;
+        _pCC -= p;
     }
 
-    public void BuyForMoney(int amount)
+    public void WBC(int a)
     {
-        _coinCount -= amount;
+        _bCC += a;
+    }
+    public void WRC(int p)
+    {
+        _rCC += p;
+    }
+    public void WPC(int a)
+    {
+        _pCC += a;
     }
 
-    public void LoadPREFS()
+    public void WM(int a)
     {
-        _blueChipCount = PlayerPrefs.GetInt("BlueChip", 0);
-        _pinkChipCount = PlayerPrefs.GetInt("PinkChip", 0);
-        _redChipCount = PlayerPrefs.GetInt("RedChip", 0);
-        _coinCount = PlayerPrefs.GetInt("MoneyScore", 300);
+        _cC += a;
     }
 
-    public void SavePREFS()
+    public void BFM(int a)
     {
-        PlayerPrefs.SetInt("BlueChip", _blueChipCount);
-        PlayerPrefs.SetInt("PinkChip", _pinkChipCount);
-        PlayerPrefs.SetInt("RedChip", _redChipCount);
-        PlayerPrefs.SetInt("MoneyScore", _coinCount);
+        _cC -= a;
+    }
+
+    public void LPREFS()
+    {
+        _bCC = PlayerPrefs.GetInt("BlueChip", 0);
+        _pCC = PlayerPrefs.GetInt("PinkChip", 0);
+        _rCC = PlayerPrefs.GetInt("RedChip", 0);
+        _cC = PlayerPrefs.GetInt("MoneyScore", 300);
+    }
+
+    public void SPREFS()
+    {
+        PlayerPrefs.SetInt("BlueChip", _bCC);
+        PlayerPrefs.SetInt("PinkChip", _pCC);
+        PlayerPrefs.SetInt("RedChip", _rCC);
+        PlayerPrefs.SetInt("MoneyScore", _cC);
         PlayerPrefs.Save();
     }
 }

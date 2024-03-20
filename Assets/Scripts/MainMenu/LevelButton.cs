@@ -60,12 +60,12 @@ public class LevelButton : MonoBehaviour
                 SceneManager.LoadScene(_sceneID);
                 break;
             case false:
-                if (openPrice <= MoneyManager.Instance.GetCoins())
+                if (openPrice <= MoneyManager.Instance.GC())
                 {
                     ClickSound.Instance.PlayCoin();
                     CoinSound.Instance.PlayCoin();
-                    MoneyManager.Instance.BuyForMoney(openPrice);
-                    MoneyManager.Instance.SavePREFS();
+                    MoneyManager.Instance.BFM(openPrice);
+                    MoneyManager.Instance.SPREFS();
                     LevelManager.Instance.SLES(buttonID, true);
                     _isOpened = true;
 

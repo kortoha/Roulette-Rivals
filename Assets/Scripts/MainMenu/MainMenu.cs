@@ -25,6 +25,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         _iso = PlayerPrefs.GetInt("IsSoundOn", 0) == 0;
+        AudioListener.pause = _iso;
         sb.onClick.AddListener(TS);
 
         USBS();

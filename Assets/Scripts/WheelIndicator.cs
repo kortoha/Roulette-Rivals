@@ -10,19 +10,19 @@ public class WheelIndicator : MonoBehaviour
         Instance = this;
     }
 
-    private WheelItem _wheelItem;
+    private WheelItem _wI;
 
-    [NonSerialized] public bool isWinOnse = false;
+    [NonSerialized] public bool iWO = false;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D c)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Item"))
+        if (c.gameObject.layer == LayerMask.NameToLayer("Item"))
         {
-            if (!FortuneWheel.Instance.isSF && FortuneWheel.Instance.ICS() && !isWinOnse)
+            if (!FortuneWheel.Instance.isSF && FortuneWheel.Instance.ICS() && !iWO)
             {
-                _wheelItem = collision.gameObject.GetComponent<WheelItem>();
-                _wheelItem.WinChips();
-                isWinOnse = true;
+                _wI = c.gameObject.GetComponent<WheelItem>();
+                _wI.WC();
+                iWO = true;
             }
         }
     }

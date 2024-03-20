@@ -84,27 +84,27 @@ public class Cell : MonoBehaviour
             switch (_tipe)
             {
                 case TipeOfCellPrice.BluePrice:
-                    if(MoneyManager.Instance.GetBlueChips() >= _price && collider.gameObject.layer == LayerMask.NameToLayer("BlueChip"))
+                    if(MoneyManager.Instance.GBC() >= _price && collider.gameObject.layer == LayerMask.NameToLayer("BlueChip"))
                     {
                         _lockSprite.enabled = false;
                         OpenCell("BlueChip", collider);
-                        MoneyManager.Instance.BuyForBlueChips(_price);
+                        MoneyManager.Instance.BFBC(_price);
                     }
                     break;
                 case TipeOfCellPrice.PinkPrice:
-                    if (MoneyManager.Instance.GetPinkChips() >= _price && collider.gameObject.layer == LayerMask.NameToLayer("PinkChip"))
+                    if (MoneyManager.Instance.GPC() >= _price && collider.gameObject.layer == LayerMask.NameToLayer("PinkChip"))
                     {
                         _lockSprite.enabled = false;
                         OpenCell("PinkChip", collider);
-                        MoneyManager.Instance.BuyForPinkChips(_price);
+                        MoneyManager.Instance.BFPC(_price);
                     }
                     break;
                 case TipeOfCellPrice.RedPrice:
-                    if (MoneyManager.Instance.GetRedChips() >= _price && collider.gameObject.layer == LayerMask.NameToLayer("RedChip"))
+                    if (MoneyManager.Instance.GRC() >= _price && collider.gameObject.layer == LayerMask.NameToLayer("RedChip"))
                     {
                         _lockSprite.enabled = false;
                         OpenCell("RedChip", collider);
-                        MoneyManager.Instance.BuyForRedChips(_price);
+                        MoneyManager.Instance.BFRC(_price);
                     }
                     break;
             }
@@ -129,13 +129,13 @@ public class Cell : MonoBehaviour
             switch (_tipe)
             {
                 case TipeOfCellPrice.BluePrice:
-                    MoneyManager.Instance.WinBlueChips(losedMoney);
+                    MoneyManager.Instance.WBC(losedMoney);
                     break;
                 case TipeOfCellPrice.PinkPrice:
-                    MoneyManager.Instance.WinPinkChips(losedMoney);
+                    MoneyManager.Instance.WPC(losedMoney);
                     break;
                 case TipeOfCellPrice.RedPrice:
-                    MoneyManager.Instance.WinRedChips(losedMoney);
+                    MoneyManager.Instance.WRC(losedMoney);
                     break;
             }
             _isReturnedChips = true;
@@ -152,13 +152,13 @@ public class Cell : MonoBehaviour
                 switch (_tipe)
                 {
                     case TipeOfCellPrice.BluePrice:
-                        MoneyManager.Instance.WinBlueChips(newPrice);
+                        MoneyManager.Instance.WBC(newPrice);
                         break;
                     case TipeOfCellPrice.PinkPrice:
-                        MoneyManager.Instance.WinPinkChips(newPrice);
+                        MoneyManager.Instance.WPC(newPrice);
                         break;
                     case TipeOfCellPrice.RedPrice:
-                        MoneyManager.Instance.WinRedChips(newPrice);
+                        MoneyManager.Instance.WRC(newPrice);
                         break;
                 }
                 _2xIcon.SetActive(true);
@@ -180,7 +180,7 @@ public class Cell : MonoBehaviour
                 SFXManager.Instance.PlaySound(SFXManager.Instance.winMoney);
                 SFXManager.Instance.PlaySound(SFXManager.Instance.moneySFX);
                 int money = UnityEngine.Random.Range(50, 200);
-                MoneyManager.Instance.WinMoney(money);
+                MoneyManager.Instance.WM(money);
                 _winMoneyIcon.SetActive(true);
 
                 Transform cfx = Instantiate(_cFX, Vector2.zero, Quaternion.identity);

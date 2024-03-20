@@ -23,10 +23,10 @@ public class TableGame : MonoBehaviour
 
     private void Update()
     {
-        _bCText.text = MoneyManager.Instance.GetBlueChips().ToString();
-        _pCText.text = MoneyManager.Instance.GetPinkChips().ToString();
-        _rCText.text = MoneyManager.Instance.GetRedChips().ToString();
-        _cCText.text = MoneyManager.Instance.GetCoins().ToString();
+        _bCText.text = MoneyManager.Instance.GBC().ToString();
+        _pCText.text = MoneyManager.Instance.GPC().ToString();
+        _rCText.text = MoneyManager.Instance.GRC().ToString();
+        _cCText.text = MoneyManager.Instance.GC().ToString();
 
         IM();
         MCI();

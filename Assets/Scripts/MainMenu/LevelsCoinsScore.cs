@@ -7,6 +7,6 @@ public class LevelsCoinsScore : MonoBehaviour
 
     private void Update()
     {
-        _coinsScoreText.text = MoneyManager.Instance.GetCoins().ToString();
+        _coinsScoreText.text = MoneyManager.Instance.GC().ToString();
     }
 }

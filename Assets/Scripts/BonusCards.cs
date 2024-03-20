@@ -38,9 +38,9 @@ public class BonusCards : MonoBehaviour
 
     private void RLC()
     {
-        if (MoneyManager.Instance.GetCoins() >= _lCP)
+        if (MoneyManager.Instance.GC() >= _lCP)
         {
-            MoneyManager.Instance.BuyForMoney(_lCP);
+            MoneyManager.Instance.BFM(_lCP);
             SFXManager.Instance.PlaySound(SFXManager.Instance.returnChip);
             foreach (Cell i in _cA)
             {
@@ -58,16 +58,16 @@ public class BonusCards : MonoBehaviour
 
     private void IW()
     {
-        if (MoneyManager.Instance.GetCoins() >= _rCP)
+        if (MoneyManager.Instance.GC() >= _rCP)
         {
             SFXManager.Instance.PlaySound(SFXManager.Instance.plusTenPers);
-            MoneyManager.Instance.BuyForMoney(_rCP);
+            MoneyManager.Instance.BFM(_rCP);
             float pI = 0.10f;
 
             foreach (WheelItem i in _wIA)
             {
-                int iC = (int)(i.CarryingChipCount * (1 + pI));
-                i.CarryingChipCount = iC;
+                int iC = (int)(i.CCC * (1 + pI));
+                i.CCC = iC;
             }
 
             Transform fx = Instantiate(_tPFX, Vector2.zero, Quaternion.identity);

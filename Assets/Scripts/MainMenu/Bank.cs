@@ -31,45 +31,45 @@ public class Bank : MonoBehaviour
 
     private void ECB() 
     {
-        if(MoneyManager.Instance.GetBlueChips() >= 1)
+        if(MoneyManager.Instance.GBC() >= 1)
         {
             ClickSound.Instance.PlayCoin();
             CoinSound.Instance.PlayCoin();
-            MoneyManager.Instance.BuyForBlueChips(1);
-            MoneyManager.Instance.WinMoney(_bP); 
-            MoneyManager.Instance.SavePREFS();
+            MoneyManager.Instance.BFBC(1);
+            MoneyManager.Instance.WM(_bP); 
+            MoneyManager.Instance.SPREFS();
         }
     }
 
     private void EPCB()
     {
-        if (MoneyManager.Instance.GetPinkChips() >= 1)
+        if (MoneyManager.Instance.GPC() >= 1)
         {
             ClickSound.Instance.PlayCoin();
             CoinSound.Instance.PlayCoin();
-            MoneyManager.Instance.BuyForPinkChips(1); 
-            MoneyManager.Instance.WinMoney(_pP);
-            MoneyManager.Instance.SavePREFS();
+            MoneyManager.Instance.BFPC(1); 
+            MoneyManager.Instance.WM(_pP);
+            MoneyManager.Instance.SPREFS();
         }
     }
 
     private void ERC() 
     {
-        if (MoneyManager.Instance.GetRedChips() >= 1)
+        if (MoneyManager.Instance.GRC() >= 1)
         {
             ClickSound.Instance.PlayCoin();
             CoinSound.Instance.PlayCoin();
-            MoneyManager.Instance.BuyForRedChips(1); 
-            MoneyManager.Instance.WinMoney(_rP);
-            MoneyManager.Instance.SavePREFS();
+            MoneyManager.Instance.BFRC(1); 
+            MoneyManager.Instance.WM(_rP);
+            MoneyManager.Instance.SPREFS();
         }
     }
 
     private void UV() 
     {
-        _bCC.text = MoneyManager.Instance.GetBlueChips().ToString(); 
-        _pCC.text = MoneyManager.Instance.GetPinkChips().ToString(); 
-        _rCC.text = MoneyManager.Instance.GetRedChips().ToString(); 
-        _cC.text = MoneyManager.Instance.GetCoins().ToString(); 
+        _bCC.text = MoneyManager.Instance.GBC().ToString(); 
+        _pCC.text = MoneyManager.Instance.GPC().ToString(); 
+        _rCC.text = MoneyManager.Instance.GRC().ToString(); 
+        _cC.text = MoneyManager.Instance.GC().ToString(); 
     }
 }

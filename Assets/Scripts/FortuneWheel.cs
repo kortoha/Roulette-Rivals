@@ -34,11 +34,11 @@ public class FortuneWheel : MonoBehaviour
     {
         isSF = false;
 
-        if (_sE.GetGoldChipCount() > 0)
+        if (_sE.GGCC() > 0)
         {
             if (_iCS)
             {
-                WheelIndicator.Instance.isWinOnse = false;
+                WheelIndicator.Instance.iWO = false;
                 StartCoroutine(S());
                 _iCS = false;
             }
@@ -47,7 +47,7 @@ public class FortuneWheel : MonoBehaviour
 
     private IEnumerator S() 
     {
-        if (_sE.GetGoldChipCount() > 0)
+        if (_sE.GGCC() > 0)
         {
             _sS = UnityEngine.Random.Range(200, 400);
             _sSFX.Play();
@@ -58,7 +58,7 @@ public class FortuneWheel : MonoBehaviour
                 yield return null;
                 if (_sS <= 0)
                 {
-                    _sE.UseEnergyForGoldChip();
+                    _sE.UEFGC();
                     _iCS = true;
                     _sSFX.Stop();
                 }

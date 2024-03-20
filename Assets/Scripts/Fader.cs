@@ -4,7 +4,7 @@ public class Fader : MonoBehaviour
 {
     public static Fader Instance { get; private set; }
 
-    private Animator _animator;
+    private Animator _a;
 
     private void Awake()
     {
@@ -13,11 +13,11 @@ public class Fader : MonoBehaviour
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
+        _a = GetComponent<Animator>();
     }
 
-    public void PlayeFadeAnim()
+    public void PFA()
     {
-        _animator.SetTrigger("Fade");
+        _a.SetTrigger("Fade");
     }
 }

@@ -38,12 +38,12 @@ public class TransitionBetweenFields : MonoBehaviour
     {
         if (_ito)
         {
-            Fader.Instance.PlayeFadeAnim();
+            Fader.Instance.PFA();
             Invoke("OW", 0.51f);
         }
         else
         {
-            Fader.Instance.PlayeFadeAnim();
+            Fader.Instance.PFA();
             Invoke("OT", 0.51f);
         }
     }

@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class FortuneWheelVisual : MonoBehaviour
 {
-    public TextMeshProUGUI blueChipCountText;
-    public TextMeshProUGUI redChipCountText;
-    public TextMeshProUGUI pinkChipCountText;
+    public TextMeshProUGUI bCCT;
+    public TextMeshProUGUI rCCT;
+    public TextMeshProUGUI pCCT;
 
 
     private void Update()
@@ -15,8 +15,8 @@ public class FortuneWheelVisual : MonoBehaviour
 
     private void UpdateVisual()
     {
-        blueChipCountText.text = MoneyManager.Instance.GetBlueChips().ToString();
-        redChipCountText.text = MoneyManager.Instance.GetRedChips().ToString();
-        pinkChipCountText.text = MoneyManager.Instance.GetPinkChips().ToString();
+        bCCT.text = MoneyManager.Instance.GBC().ToString();
+        rCCT.text = MoneyManager.Instance.GRC().ToString();
+        pCCT.text = MoneyManager.Instance.GPC().ToString();
     }
 }
